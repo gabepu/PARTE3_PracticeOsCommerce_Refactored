@@ -153,12 +153,12 @@ class TestCase1{
 		logout ("https://demo.oscommerce.com/logoff.php");
 	}
 
-	
+	/*
 	@Test
 	void test2() {
 		
 	}
-	
+	*/
 
 }
 
