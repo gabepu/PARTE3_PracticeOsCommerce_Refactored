@@ -143,7 +143,7 @@ class TestCase1{
 		driver.get("https://demo.oscommerce.com/logoff.php");
 	}
 	
-	/*
+	
 	@Test
 	void test3() {
 		login ("https://demo.oscommerce.com/login.php", "testing65536@testingmail.com", "T3sting.G00d!");
@@ -152,7 +152,7 @@ class TestCase1{
 		assertResult ("Your Order Has Been Processed!");		
 		logout ("https://demo.oscommerce.com/logoff.php");
 	}
-	*/
+
 	
 	@Test
 	void test2() {
