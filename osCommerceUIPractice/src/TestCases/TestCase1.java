@@ -111,7 +111,7 @@ class TestCase1{
 
 	
 	@Test
-	void test2() throws InterruptedException {
+	void test2() {
 		Processes.Login login = new Processes.Login(driver);
 		login.login("testing65536@testingmail.com", "T3sting.G00d!");
 		
