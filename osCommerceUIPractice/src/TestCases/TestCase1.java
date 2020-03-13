@@ -113,18 +113,15 @@ class TestCase1{
 	@Test
 	void test2() {
 		Processes.Login login = new Processes.Login(driver);
-		login.login("testing65536@testingmail.com", "T3sting.G00d!");
-		
 		Processes.SelectProduct selectProduct = new Processes.SelectProduct(driver);
-		selectProduct.selectProduct("Beloved", "3");
-		
 		Processes.Purchase purchase = new Processes.Purchase(driver);
-		purchase.purchase("input[value='cod'");
-		
 		Processes.AssertResult assertResult= new Processes.AssertResult(driver);
-		assertResult.assertResult ("Your Order Has Been Processed!");		
-		
 		Processes.Logout logout = new Processes.Logout(driver);
+		
+		login.login("testing65536@testingmail.com", "T3sting.G00d!");
+		selectProduct.selectProduct("Beloved", "3");
+		purchase.purchase("input[value='cod'");
+		assertResult.assertResult ("Your Order Has Been Processed!");		
 		logout.logout();
 	}
 
