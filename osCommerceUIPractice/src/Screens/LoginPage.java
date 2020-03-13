@@ -1,26 +1,21 @@
 package Screens;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
 	WebDriver driver;
-	
-	private static String LOGIN_URL="https://demo.oscommerce.com/login.php";
-	private static String LOGOUT_URL="https://demo.oscommerce.com/login.php";
 		
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
 
 	public void login(String username, String password) {
-		driver.get(LOGIN_URL);
-		Processes.LoginProcess login = new Processes.LoginProcess(driver);
-		login.login(username, password);
-	}
-	
-	public void logout() {
-		driver.get(LOGOUT_URL);
+		driver.get("https://demo.oscommerce.com/login.php");
+		driver.findElement(By.name("email_address")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.id("tdb1")).click();
 	}
 
 }

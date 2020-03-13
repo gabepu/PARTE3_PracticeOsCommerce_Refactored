@@ -1,5 +1,6 @@
 package Screens;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class PurchasePage {
@@ -11,8 +12,10 @@ public class PurchasePage {
     }
 
 	public void purchase(String paymentMethodInputValue) {
-		Processes.PurchaseProcess purchaseProcess = new Processes.PurchaseProcess(driver);
-		purchaseProcess.purchase(paymentMethodInputValue);	
+		driver.findElement(By.id("tdb6")).click();
+		driver.findElement(By.cssSelector(paymentMethodInputValue)).click();
+		driver.findElement(By.id("tdb6")).click();
+		driver.findElement(By.id("tdb5")).click();
 	}
 	
 }

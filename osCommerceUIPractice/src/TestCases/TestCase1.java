@@ -111,17 +111,21 @@ class TestCase1{
 
 	
 	@Test
-	void test2() {
-		Screens.LoginPage loginPage = new Screens.LoginPage(driver);
-		Screens.WelcomePage welcomePage = new Screens.WelcomePage(driver);
-		Screens.PurchasePage purchasePage = new Screens.PurchasePage(driver);
-		Screens.ResultPage resultPage = new Screens.ResultPage(driver);
+	void test2() throws InterruptedException {
+		Processes.Login login = new Processes.Login(driver);
+		login.login("testing65536@testingmail.com", "T3sting.G00d!");
 		
-		loginPage.login("testing65536@testingmail.com", "T3sting.G00d!");
-		welcomePage.selectProduct("Beloved", "3");
-		purchasePage.purchase("input[value='cod'");
-		resultPage.assertResult ("Your Order Has Been Processed!");		
-		loginPage.logout();
+		Processes.SelectProduct selectProduct = new Processes.SelectProduct(driver);
+		selectProduct.selectProduct("Beloved", "3");
+		
+		Processes.Purchase purchase = new Processes.Purchase(driver);
+		purchase.purchase("input[value='cod'");
+		
+		Processes.AssertResult assertResult= new Processes.AssertResult(driver);
+		assertResult.assertResult ("Your Order Has Been Processed!");		
+		
+		Processes.Logout logout = new Processes.Logout(driver);
+		logout.logout();
 	}
 
 }
