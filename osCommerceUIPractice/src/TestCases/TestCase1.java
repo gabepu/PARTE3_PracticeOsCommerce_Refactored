@@ -27,8 +27,6 @@ class TestCase1{
 	// For test1() step #10
 	private By levelTitle=By.cssSelector("h1");
 	
-	private Process process;
-	
 	public static void createAndStartService() throws IOException {
 		service = new ChromeDriverService.Builder()
 		      .usingDriverExecutable(new File("chromedriver.exe"))
@@ -46,38 +44,6 @@ class TestCase1{
 		  driver.quit();
 	}
 
-	void login (String url, String username, String password) {
-		driver.get(url);
-		driver.findElement(By.name("email_address")).sendKeys(username);
-		driver.findElement(By.name("password")).sendKeys(password);
-		driver.findElement(By.id("tdb1")).click();
-	}
-	
-	void logout (String url) {
-		driver.get(url);
-	}
-	
-	void selectProduct (String product, String quantity) {
-		driver.findElement(By.linkText(product)).click();
-		driver.findElement(By.id("tdb5")).click();
-		WebElement inputString = driver.findElement(By.name("cart_quantity[]"));
-		inputString.clear();
-		inputString.sendKeys(quantity);
-		driver.findElement(By.id("tdb5")).click();
-		driver.findElement(By.id("tdb6")).click();		
-	}
-
-	void purchase (String paymentMethodInputValue) {
-		driver.findElement(By.id("tdb6")).click();
-		driver.findElement(By.cssSelector(paymentMethodInputValue)).click();
-		driver.findElement(By.id("tdb6")).click();
-		driver.findElement(By.id("tdb5")).click();		
-	}
-
-	void assertResult (String cadena) {
-		WebElement levelTitleElement=driver.findElement(levelTitle);
-		assertEquals(levelTitleElement.getText(),cadena);	
-	}
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -142,23 +108,21 @@ class TestCase1{
 		// Logout
 		driver.get("https://demo.oscommerce.com/logoff.php");
 	}
-	
-	
-	@Test
-	void test3() {
-		login ("https://demo.oscommerce.com/login.php", "testing65536@testingmail.com", "T3sting.G00d!");
-		selectProduct ("Beloved", "3");
-		purchase ("input[value='cod'");
-		assertResult ("Your Order Has Been Processed!");		
-		logout ("https://demo.oscommerce.com/logoff.php");
-	}
 
-	/*
+	
 	@Test
 	void test2() {
+		Screens.LoginPage loginPage = new Screens.LoginPage(driver);
+		Screens.WelcomePage welcomePage = new Screens.WelcomePage(driver);
+		Screens.PurchasePage purchasePage = new Screens.PurchasePage(driver);
+		Screens.ResultPage resultPage = new Screens.ResultPage(driver);
 		
+		loginPage.login("testing65536@testingmail.com", "T3sting.G00d!");
+		welcomePage.selectProduct("Beloved", "3");
+		purchasePage.purchase("input[value='cod'");
+		resultPage.assertResult ("Your Order Has Been Processed!");		
+		loginPage.logout();
 	}
-	*/
 
 }
 

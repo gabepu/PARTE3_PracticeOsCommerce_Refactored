@@ -39,4 +39,10 @@
   		<scope>test</scope>
   	</dependency>
   </dependencies>
+  	<properties>
+  		<sonar.projectKey>PracticaSonarLintCloud</sonar.projectKey>
+ 	 	<sonar.organization>clauupcschool</sonar.organization>
+ 	 	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  		<sonar.login>111877da660a1e689e3f5ec14912902af8adca1b</sonar.login>
+	</properties>
 </project>
