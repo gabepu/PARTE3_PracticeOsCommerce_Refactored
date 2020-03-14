@@ -1,4 +1,4 @@
-package Processes;
+package processes;
 
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +11,7 @@ public class SelectProduct {
     }
     
     public void selectProduct(String product, String quantity) { 	
-    	Screens.SelectPage selectProduct = new Screens.SelectPage(driver);
+    	screens.SelectPage selectProduct = new screens.SelectPage(driver);
     	selectProduct.selectProduct(product, quantity);
     }
     

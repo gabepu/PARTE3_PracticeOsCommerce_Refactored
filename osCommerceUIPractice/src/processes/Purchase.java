@@ -1,4 +1,4 @@
-package Processes;
+package processes;
 
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +11,7 @@ public class Purchase {
     }
     
 	public void purchase(String paymentMethodInputValue) {
-		Screens.PurchasePage purchase = new Screens.PurchasePage(driver);
+		screens.PurchasePage purchase = new screens.PurchasePage(driver);
 		purchase.purchase(paymentMethodInputValue);
 	}
 }

@@ -1,4 +1,4 @@
-package TestCases;
+package testcases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -51,7 +51,9 @@ class TestCase1{
 	}
 
 	@AfterAll
-	static void tearDownAfterClass() throws Exception {}
+	static void tearDownAfterClass() {
+		// Do nothing on purpose.
+	}
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -112,11 +114,11 @@ class TestCase1{
 	
 	@Test
 	void test2() {
-		Processes.Login login = new Processes.Login(driver);
-		Processes.SelectProduct selectProduct = new Processes.SelectProduct(driver);
-		Processes.Purchase purchase = new Processes.Purchase(driver);
-		Processes.AssertResult assertResult= new Processes.AssertResult(driver);
-		Processes.Logout logout = new Processes.Logout(driver);
+		processes.Login login = new processes.Login(driver);
+		processes.SelectProduct selectProduct = new processes.SelectProduct(driver);
+		processes.Purchase purchase = new processes.Purchase(driver);
+		processes.AssertResult assertResult= new processes.AssertResult(driver);
+		processes.Logout logout = new processes.Logout(driver);
 		
 		login.login("testing65536@testingmail.com", "T3sting.G00d!");
 		selectProduct.selectProduct("Beloved", "3");

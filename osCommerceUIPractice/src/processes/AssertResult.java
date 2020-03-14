@@ -1,4 +1,4 @@
-package Processes;
+package processes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +15,7 @@ public class AssertResult {
     }
     
 	public void assertResult(String result) {
-		Screens.ResultPage assertResult = new Screens.ResultPage(driver);
+		screens.ResultPage assertResult = new screens.ResultPage(driver);
 		assertResult.assertResult(result);	
 	}
 }

@@ -1,4 +1,4 @@
-package Processes;
+package processes;
 
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +11,7 @@ public class Login {
     }
     
     public void login(String username, String password) {
-		Screens.LoginPage login = new Screens.LoginPage(driver);
+		screens.LoginPage login = new screens.LoginPage(driver);
     	login.login(username, password);
     }
     

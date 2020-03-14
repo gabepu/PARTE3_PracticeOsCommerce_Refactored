@@ -1,4 +1,4 @@
-package Screens;
+package screens;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

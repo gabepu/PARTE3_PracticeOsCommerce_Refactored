@@ -1,4 +1,4 @@
-package Processes;
+package processes;
 
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +11,7 @@ public class Logout {
     }
     
     public void logout() {
-		Screens.LogoutPage logout = new Screens.LogoutPage(driver);
+		screens.LogoutPage logout = new screens.LogoutPage(driver);
     	logout.logout();
     }
   
