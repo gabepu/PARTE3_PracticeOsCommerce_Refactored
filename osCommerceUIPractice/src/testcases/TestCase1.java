@@ -46,7 +46,7 @@ class TestCase1{
 
 	
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
+	static void setUpBeforeClass() throws IOException {
 		  createAndStartService();	
 	}
 
@@ -56,14 +56,14 @@ class TestCase1{
 	}
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
 		createDriver();
 		driver.manage().window().maximize();
 		
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	void tearDown() {
 		quitDriver();
 	}
 
